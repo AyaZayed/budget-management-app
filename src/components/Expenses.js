@@ -1,11 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../context.js'
 
 export default function Expenses() {
 
-    const dispatchedExpenses = useContext(Context).expenses
-    const [expenses, setExpenses] = useState(dispatchedExpenses)
+    const expenses = useContext(Context).expenses
     const dispatch = useContext(Context).dispatch
+    const [displayedExpenses, setDisplayedExpenses] = useState(expenses || [])
+
+    useEffect(() => {
+        setDisplayedExpenses(expenses)
+    }, [expenses])
 
     function deleteExpense(id) {
         console.log(id)
@@ -13,18 +17,15 @@ export default function Expenses() {
             type: 'DELETE_EXPENSE',
             payload: id
         })
-        setExpenses(expenses.filter((expense) => expense.id !== id))
+        setDisplayedExpenses(displayedExpenses.filter((expense) => expense.id !== id))
     }
 
     function searchExpenses(e) {
-        if (e.target.value === '') {
-            setExpenses(dispatchedExpenses)
-            return
-        }
-        const newExpenses = expenses.filter((expense) => {
-            return expense.name.toLowerCase().includes(e.target.value)
+        const searchValue = e.target.value.toLowerCase()
+        const filteredExpenses = expenses.filter((expense) => {
+            return expense.name.toLowerCase().includes(searchValue)
         })
-        setExpenses(newExpenses)
+        setDisplayedExpenses(filteredExpenses)
     }
 
     return (
@@ -32,7 +33,7 @@ export default function Expenses() {
             <h2>Expenses</h2>
             <input type='text' placeholder='Type to search...' onChange={searchExpenses} />
             <ul>
-                {expenses.map((expense) => (
+                {displayedExpenses.map((expense) => (
                     <li key={expense.id}>
                         <span>{expense.name}</span>
                         <span>{expense.cost}</span>

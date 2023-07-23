@@ -9,7 +9,7 @@ export default function App() {
     <Provider>
       <Budget />
       <Expenses />
-      {/* <AddExpense /> */}
+      <AddExpense />
     </Provider>
   )
 }
