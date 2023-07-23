@@ -2,8 +2,19 @@ import React, { useContext, useState } from 'react'
 import { Context } from '../context.js'
 
 export default function Expenses() {
+
     const dispatchedExpenses = useContext(Context).expenses
     const [expenses, setExpenses] = useState(dispatchedExpenses)
+    const dispatch = useContext(Context).dispatch
+
+    function deleteExpense(id) {
+        console.log(id)
+        dispatch({
+            type: 'DELETE_EXPENSE',
+            payload: id
+        })
+        setExpenses(expenses.filter((expense) => expense.id !== id))
+    }
 
     function searchExpenses(e) {
         if (e.target.value === '') {
@@ -25,6 +36,7 @@ export default function Expenses() {
                     <li key={expense.id}>
                         <span>{expense.name}</span>
                         <span>{expense.cost}</span>
+                        <button onClick={() => deleteExpense(expense.id)}>x</button>
                     </li>
                 ))}
             </ul>

@@ -11,7 +11,11 @@
   --font-small: calc(0.667rem);
   --font-family: 'Open Sans', sans-serif;
   /* colors */
-
+  --green: #006d77;
+  --light-green: #83c5be;
+  --grey: #edf6f9;
+  --earthy-red: #e29578;
+  --light-red: #ffddd2;
 }
 
 html {
