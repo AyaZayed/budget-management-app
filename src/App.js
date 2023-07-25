@@ -7,9 +7,11 @@ import AddExpense from './components/AddExpense'
 export default function App() {
   return (
     <Provider>
-      <Budget />
-      <Expenses />
-      <AddExpense />
+      <div className="container">
+        <Budget />
+        <Expenses />
+        <AddExpense />
+      </div>
     </Provider>
   )
 }

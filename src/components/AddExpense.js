@@ -30,19 +30,19 @@ export default function AddExpense() {
         <div className='add-expense'>
             <h2>Add Expense</h2>
             <form onSubmit={AddExpense}>
-                <div className='form-group'>
-                    <div>
+                <div className='wrapper'>
+                    <div className='form-group'>
                         <label htmlFor='name'>Name</label>
                         <input type='text' id='name' required='required' value={inputs.name}
                             onChange={(e) => setInputs({ ...inputs, name: e.target.value })} />
                     </div>
-                    <div>
+                    <div className='form-group'>
                         <label htmlFor='cost'>Cost</label>
                         <input type='number' id='cost' required='required' value={inputs.cost}
                             onChange={(e) => setInputs({ ...inputs, cost: e.target.value })} />
                     </div>
                 </div>
-                <button type='submit'>Add</button>
+                <button type='submit' className='primary-btn'>Add</button>
             </form>
         </div>
     )

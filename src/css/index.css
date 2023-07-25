@@ -12,8 +12,9 @@
   --font-family: 'Open Sans', sans-serif;
   /* colors */
   --green: #006d77;
-  --light-green: #83c5be;
+  --light-green: #8abeba79;
   --grey: #edf6f9;
+  ----light-grey: #edf6f9b7;
   --earthy-red: #e29578;
   --light-red: #ffddd2;
 }
@@ -55,10 +56,12 @@ p {
   font-size: var(--font-size-basis);
 }
 
-/* ::-moz-selection {
-  background-color: var(--primary-color);
+::-moz-selection {
+  background-color: var(--earthy-red);
+  color: #fff;
 }
 
 ::selection {
-  background-color: var(--primary-color);
-} */
+  background-color: var(--earthy-red);
+  color: #fff;
+}

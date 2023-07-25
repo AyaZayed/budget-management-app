@@ -35,9 +35,11 @@ export default function Expenses() {
             <ul>
                 {displayedExpenses.map((expense) => (
                     <li key={expense.id}>
-                        <span>{expense.name}</span>
-                        <span>{expense.cost}</span>
-                        <button onClick={() => deleteExpense(expense.id)}>x</button>
+                        <p>{expense.name}</p>
+                        <div>
+                            <span>${expense.cost}</span>
+                            <button className='primary-btn' onClick={() => deleteExpense(expense.id)}>X</button>
+                        </div>
                     </li>
                 ))}
             </ul>
