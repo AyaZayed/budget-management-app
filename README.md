@@ -4,7 +4,7 @@ description
 
 ## Screenshot
 
-![Screenshot]()
+![Screenshot](https://res.cloudinary.com/dcfrq5i2y/image/upload/v1690252548/projects%20screenshots/Budget%20Manager.jpg)
 
 To use this app run these commands:
 

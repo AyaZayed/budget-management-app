@@ -12,7 +12,7 @@ export default function Modal({ setShowModal, editBudget, budget }) {
     return (
         <div className='backdrop'>
             <div className='modal'>
-                <button className='close' onClick={() => setShowModal(false)}>X</button>
+                <button className='close' onClick={() => setShowModal(false)}>x</button>
                 <form onSubmit={handleEditBudget}>
                     <h3>Enter new budget</h3>
                     <input type='number' value={newBudget} onChange={(e) => setNewBudget(e.target.value)} />
