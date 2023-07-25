@@ -1,6 +1,6 @@
-# Title
+# Budget Manager
 
-description
+This site lets you set a budget for yourself and monitor your expenses, it's made using react context.
 
 ## Screenshot
 
